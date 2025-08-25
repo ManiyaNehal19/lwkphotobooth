@@ -1,10 +1,10 @@
 import React from 'react'
-
+import WebcamCapture from '@/components/WebcamCapture'
 const Booth = () => {
   return (
 
     
-      <div className='text-black'>Booth</div>
+      <div className='w-full'><WebcamCapture/></div>
 
   )
 }
