@@ -1,11 +1,16 @@
+
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
+// import Link from "next/link";
 import "./globals.css";
 // import bg_image from "@/assets/bg_image.png"
-import Image from "next/image";
+// import { motion } from "framer-motion";
+import Image from 'next/image'
+// import curtain from "@/assets/urt.png"
 import Logo from "@/assets/LWK PhotoBooth (2).png"
-import Button from "@/components/Button";
+
 import Side from "@/assets/Untitled design (8).png"
+// import { useState } from "react";
 
 const leagueSpartan = League_Spartan({
    weight: ["400", "500", "700"], // choose weights you need
@@ -36,10 +41,7 @@ export default function RootLayout({
             <Image className="w-1/5 h-full" src={Side} alt="Side Image"/>
          
           <div className="w-3/5 h-full">
-            <div className=" w-full h-6/7 bg-white"> {children}</div>
-          <div className="w-full">  
-        <Button place={"Continue"} link_href={"/booth"}/>
-        </div>
+            {children}
           </div>
           
           
