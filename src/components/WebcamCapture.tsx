@@ -6,7 +6,8 @@ import { useRef } from 'react'
 import bow_red from "@/assets/Untitled design (10).png"
 import bow_silver from "@/assets/Untitled design (11).png"
 import Timer from './Timer'
-import { json } from 'stream/consumers'
+import Link from 'next/link'
+// import { json } from 'stream/consumers'
 const WebcamCapture = () => {
 const webcamRef = useRef<Webcam>(null);
 const [filter, setfilter] = useState("none");
@@ -56,6 +57,13 @@ settimer(true);
     localStorage.setItem("photos", JSON.stringify(photos));
   }
   return (
+    <>
+    <Link href={"/photostrip-preview"} className='flex justify-end'>
+    <button
+    disabled = {!(shotsTaken===2)}
+    className={`hover:cursor-pointer p-3  rounded-full ${!(shotsTaken===2)?"cursor-not-allowed  bg-gray-400":"hover:bg-[#b12626] bg-[#da2f30] "} `}>Continue</button>
+    </Link>
+    
     <div className="flex flex-col w-full items-center">
       <div className='w-full h-3/5 flex items-center justify-center'>
         <Webcam
@@ -108,7 +116,7 @@ settimer(true);
 
       </div>
     </div>
-  
+  </>
   )
 }
 export default WebcamCapture

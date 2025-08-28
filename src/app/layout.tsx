@@ -34,13 +34,14 @@ export default function RootLayout({
         className={`${leagueSpartan.variable} w-full h-screen bg-cover bg-center flex flex-col items-center`}
         
       >
-        <div className="flex  w-3/5 justify-center items-center">
-          <Image src={Logo} alt="Logo" height={100} />
+         <div className="flex  w-3/5 justify-center items-center">
+          <Image src={Logo} alt="Logo" height={60} />
         </div>
+        {/*
         <div className="h-full w-full flex justify-center items-center">
             <Image className="w-1/5 h-full" src={Side} alt="Side Image"/>
          
-          <div className="w-3/5 h-full">
+          <div className="w-3/5 h-full overflow-y-auto">
             {children}
           </div>
           
@@ -49,7 +50,23 @@ export default function RootLayout({
           
 
         
-         </div>
+         </div> */}
+         <div className="h-full w-full flex justify-center items-stretch">
+
+  <div className="w-1/5 flex justify-center items-center">
+    <Image className="h-full w-auto object-contain" src={Side} alt="Side Image"/>
+  </div>
+
+
+  <div className="w-3/5 h-9/10 overflow-y-auto">
+    {children}
+  </div>
+
+  <div className="w-1/5 flex justify-center items-center">
+    <Image className="h-full w-auto object-contain scale-x-[-1]" src={Side} alt="Side Image"/>
+  </div>
+</div>
+
         
        
       </body>

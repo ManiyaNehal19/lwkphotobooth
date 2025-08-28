@@ -4,7 +4,9 @@ const Booth = () => {
   return (
 
     
-      <div className='w-full'><WebcamCapture/></div>
+      <div className='w-full'>
+        
+        <WebcamCapture/></div>
 
   )
 }
