@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-
   const handleClick = () => {
     setOpen(true);
     setTimeout(() => {

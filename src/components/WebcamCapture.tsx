@@ -42,26 +42,25 @@ settimer(true);
         if (imageSrc) setPhotos(prev => [...prev, imageSrc]);
 
         if (shotsTaken < 2) {
-  
-          setShotsTaken(shotsTaken + 1);
-          setCountdown(3);  
-        } else {
-          setTimerActive(false); 
-        }
+        setShotsTaken(prev => prev + 1);
+        setCountdown(3);
+      } else {
+        setTimerActive(false);
+      }
       }, 1500);
 
       return () => clearTimeout(pause);
     }
   },[timerActive, countdown, shotsTaken])
-  if(photos.length===2){
-    localStorage.setItem("photos", JSON.stringify(photos));
-  }
+  if (photos.length === 3) {
+  localStorage.setItem("photos", JSON.stringify(photos));
+}
   return (
     <>
     <Link href={"/photostrip-preview"} className='flex justify-end'>
     <button
-    disabled = {!(shotsTaken===2)}
-    className={`hover:cursor-pointer p-3  rounded-full ${!(shotsTaken===2)?"cursor-not-allowed  bg-gray-400":"hover:bg-[#b12626] bg-[#da2f30] "} `}>Continue</button>
+    disabled = {!(photos.length === 3)}
+    className={`hover:cursor-pointer p-3  rounded-full ${!(photos.length === 3)?"cursor-not-allowed  bg-gray-400":"hover:bg-[#b12626] bg-[#da2f30] "} `}>Continue</button>
     </Link>
     
     <div className="flex flex-col w-full items-center">

@@ -58,7 +58,7 @@ export default function RootLayout({
   </div>
 
 
-  <div className="w-3/5 h-9/10 overflow-y-auto">
+  <div className="w-3/5 h-9/10 overflow-scroll">
     {children}
   </div>
 
