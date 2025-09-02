@@ -28,3 +28,35 @@ body {
 body {
   overflow: hidden; /* disable whole page scroll */
 }
+
+
+/* ::-webkit-scrollbar{
+  w-2
+}
+::-webkit-scrollbar-track{rounded-full}
+::-webkit-scrollbar-track{bg-gray-100}
+::-webkit-scrollbar-thumb{rounded-full}
+::-webkit-scrollbar-thumb{bg-gray-300} */
+
+
+/* Scrollbar Styling for Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px; /* width of vertical scrollbar */
+  height: 10px; /* height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #cfcdce; /* background of the scrollbar track */
+  border-radius: 10px;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a72323; /* color of the scroll thumb */
+  border-radius: 10px;
+}
+/* 
+::-webkit-scrollbar-thumb:hover {
+  background: ; 
+} 
+*/
