@@ -61,6 +61,7 @@ useEffect(()=>{
   if(photos.length===3){
   router.push("/photostrip-preview")
   }
+  //eslint-disable-next-line react-hooks/exhaustive-deps
 },[photos.length])
   return (
     <>

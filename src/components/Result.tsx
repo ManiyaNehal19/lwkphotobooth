@@ -3,7 +3,10 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 const Result = () => {
-  const [photostrip, setPhotostrip] = useState<any>(null);
+  type photoStripType= {
+    src:string
+  }
+  const [photostrip, setPhotostrip] = useState<photoStripType>();
   const [imagesArray, setImagesArray] = useState<string[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -17,6 +20,9 @@ const Result = () => {
         const parsedImages = JSON.parse(imagesArrayLS);
         setPhotostrip(parsedPhotostrip);
         setImagesArray(parsedImages);
+
+        
+        
       } catch (err) {
         console.error("JSON parse error:", err);
       }
@@ -24,6 +30,7 @@ const Result = () => {
   }, []);
 
   useEffect(() => {
+    console.log(photostrip);
     if (!photostrip || imagesArray.length === 0 || !canvasRef.current) return;
 
     const ctx = canvasRef.current.getContext("2d");
