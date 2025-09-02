@@ -40,9 +40,9 @@ const Result = () => {
       ctx.drawImage(stripImg, 0, 0, width, height);
 
       const slots = [
-        { x: 15, y: 35, w: 163, h: 125 },
-        { x: 13, y: 190, w: 163, h: 125 },
-        { x: 15, y: 346, w: 163, h: 125 },
+        { x: 15, y: 34, w: 163, h: 125 },
+        { x: 13.25, y: 191, w: 163, h: 125 },
+        { x: 14, y: 347, w: 163, h: 125 },
       ];
 
       imagesArray.forEach((photo, i) => {
