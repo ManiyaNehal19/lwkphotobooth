@@ -20,12 +20,25 @@ const [countdown, setCountdown] = useState(0);
 const [shotsTaken, setShotsTaken] = useState(0);
 const [photos, setPhotos] = useState<string[]>([]);
 const router = useRouter();
+const takeScreenshotWithFilter = () => {
+  if (!webcamRef.current || !webcamRef.current.video) return null;
+  const video = webcamRef.current.video as HTMLVideoElement;
+  const canvas = document.createElement("canvas");
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return null;
+  ctx.filter = filter;
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL("image/jpeg");
+};
+
 // const [showCountdown, setShowCountdown] = useState(true);
 const capture = () => {
- // base64 image, you can save it or display it
-setPhotos([]);       // reset old photos
+
+setPhotos([]);      
 setShotsTaken(0);
-setCountdown(3);     // start first countdown
+setCountdown(3);    
 setTimerActive(true);
 settimer(true);
   };
@@ -40,7 +53,7 @@ settimer(true);
     if(countdown===0 && timerActive){
 
       const pause = setTimeout(() => {
-        const imageSrc = webcamRef.current?.getScreenshot();
+        const imageSrc = takeScreenshotWithFilter();
         if (imageSrc) setPhotos(prev => [...prev, imageSrc]);
 
         if (shotsTaken < 2) {
