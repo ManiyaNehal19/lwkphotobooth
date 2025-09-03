@@ -4,7 +4,7 @@ const Booth = () => {
   return (
 
     
-      <div className='w-full h-full  overflow-scroll'>
+      <div className='w-full h-full  overflow-y-scroll'>
         
         <WebcamCapture/>
       </div>
