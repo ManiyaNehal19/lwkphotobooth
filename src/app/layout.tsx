@@ -58,7 +58,7 @@ export default function RootLayout({
   </div>
 
 
-  <div className="w-3/5 h-full">
+  <div className="w-3/5 h-9/10 p-2">
     {children}
   </div>
 
