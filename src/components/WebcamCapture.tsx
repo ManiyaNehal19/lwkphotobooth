@@ -64,7 +64,7 @@ useEffect(()=>{
   //eslint-disable-next-line react-hooks/exhaustive-deps
 },[photos.length])
   return (
-    <>
+  
     
     
     <div className="flex flex-col w-full items-center">
@@ -119,7 +119,7 @@ useEffect(()=>{
 
       </div>
     </div>
-  </>
+ 
   )
 }
 export default WebcamCapture
